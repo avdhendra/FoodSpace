@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "990547169963",
+    "project_id": "foodspace1",
+    "storage_bucket": "foodspace1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:990547169963:android:7d23c497b9989b22bf9dee",
+        "android_client_info": {
+          "package_name": "com.example.foodspace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "990547169963-ga7v9gt7g3uvhc1soeavm8nvbu78652d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDy7rGq-CZc7EgBIIRPXuKHGsrk5TYQK2k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "990547169963-ga7v9gt7g3uvhc1soeavm8nvbu78652d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
