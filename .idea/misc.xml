@@ -22,6 +22,8 @@
         <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/drawable/ic_register_hero.xml" value="0.1" />
         <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/drawable/ic_side_bg.xml" value="0.1" />
         <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/drawable/login.xml" value="0.2703125" />
+        <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/drawable/outline_delivery_dining_20.xml" value="0.1175925925925926" />
+        <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/drawable/outline_restaurant_24.xml" value="0.1175925925925926" />
         <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/drawable/rate.xml" value="0.26564102564102565" />
         <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/drawable/restuarantimg.xml" value="0.21666666666666667" />
         <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/drawable/searchbg.xml" value="0.1" />
@@ -29,7 +31,7 @@
         <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/drawable/started.xml" value="0.2703125" />
         <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/font/bungee_shade (2).xml" value="0.284375" />
         <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/layout/activity_home.xml" value="0.1" />
-        <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/layout/activity_home2.xml" value="0.264" />
+        <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/layout/activity_home2.xml" value="0.1" />
         <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/layout/activity_home2child.xml" value="0.1" />
         <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/layout/activity_intro.xml" value="0.20244565217391305" />
         <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -37,6 +39,7 @@
         <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/layout/login_activity.xml" value="0.25" />
         <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/layout/restuarantsitem.xml" value="0.264" />
         <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/layout/signup.xml" value="0.19701086956521738" />
+        <entry key="..\:/coding/AndroidProject/FoodSpace/app/src/main/res/menu/bottom_menu.xml" value="0.25364583333333335" />
       </map>
     </option>
   </component>

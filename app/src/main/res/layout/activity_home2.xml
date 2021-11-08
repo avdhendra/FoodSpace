@@ -7,93 +7,115 @@
 
     android:background="#fff"
     tools:context=".Home2Activity">
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Eat \nWhat makes you Happy"
+        android:textColor="#162553"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+android:layout_marginLeft="100dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/i2"
+        app:layout_constraintBottom_toTopOf="@+id/consts"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent"
+         />
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    android:layout_width="match_parent"
+  android:id="@+id/consts"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/scrollView2"
+    app:layout_constraintTop_toBottomOf="@id/textView2"
+    >
+
+    <EditText
+        android:id="@+id/search"
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/searchbg"
+        android:drawableStart="@drawable/ic_baseline_search_24"
+        android:drawablePadding="8dp"
+        android:hint="Restaurant name,cuisine,or a dish..."
+        android:padding="5dp"
+        android:inputType="textPersonName"
+        android:paddingVertical="10dp"
+        android:paddingStart="16dp"
+        android:textColorHint="#494646"
+        android:textSize="18sp"
+
+app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="125dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/linear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:text="Eat \nWhat makes you Happy"
-                    android:textColor="#162553"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/circleImageView"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/i2"
-                    android:layout_marginBottom="25dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.956"
-                    app:layout_constraintStart_toEndOf="@+id/textView2"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="15dp">
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@drawable/searchbg"
-                    android:drawableStart="@drawable/ic_baseline_search_24"
-                    android:drawablePadding="8dp"
-                    android:hint="Restaurant name,cuisine,or a dish..."
-                    android:padding="5dp"
-                    android:paddingVertical="10dp"
-                    android:paddingStart="16dp"
-                    android:textColorHint="#494646"
-                    android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:paddingHorizontal="15dp"
-android:id="@+id/constraint"
+                 android:id="@+id/constraint"
                 >
 
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/dosa"
+                    app:layout_constraintBottom_toTopOf="@+id/textView7"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/textView7"
@@ -102,9 +124,9 @@ android:id="@+id/constraint"
                     android:text="Categories"
                     android:textColor="#162553"
                     android:textSize="15sp"
-                    android:layout_marginTop="10dp"
+android:layout_marginTop="120dp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@id/cardview1"
+
                     app:layout_constraintEnd_toEndOf="parent"
 
                     app:layout_constraintHorizontal_bias="0"
@@ -122,42 +144,52 @@ android:id="@+id/constraint"
                     android:textColor="#162553"
                     android:textSize="25sp"
                     android:textStyle="bold"
-app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0"
-android:layout_marginTop="10dp"
-                    app:layout_constraintTop_toBottomOf="@id/cardview1"
-                    app:layout_constraintBottom_toTopOf="@id/resturantRecycler"
+                    android:layout_marginTop="10dp"
+                  app:layout_constraintTop_toBottomOf="@+id/nestedscrollView"
+
                     app:layout_constraintStart_toStartOf="parent"
                     />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardview1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#FFF"
-                android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@id/textView7"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/textView3">
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView1"
-                    android:layout_width="match_parent"
-                    android:layout_height="156dp"/>
-                <TextView
-                    android:id="@+id/seemore"
-                    android:layout_marginTop="160dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/seemore"
-                    android:gravity="center"
-                    android:text="See More "
-                    android:textColor="#494646"
-                    app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_down_24"
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="0dp"
+    android:id="@+id/nestedscrollView"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/textView7"
+
+    >
+                <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nestedscrollView"
+                    >
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView1"
+        android:layout_width="match_parent"
+        android:layout_height="116dp" />
+    <TextView
+        android:id="@+id/seemore"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/seemore"
+        android:gravity="center"
+        android:text="See More "
+        android:textColor="#494646"
+        app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_down_24"
+/>
+</LinearLayout>
+</androidx.core.widget.NestedScrollView>
 
 
-                    />
-            </androidx.cardview.widget.CardView>
+
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
@@ -183,23 +215,24 @@ android:layout_marginTop="10dp"
     </ScrollView>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="413dp"
-        android:layout_height="69dp"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1">
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintHorizontal_bias="0"
+        >
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomAppBar2"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        <com.google.android.material.bottomappbar.BottomAppBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="#801717"
+android:layout_gravity="bottom"
+            android:gravity="bottom"
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+            android:id="@+id/bottomAppBar2"/>
 
-            />
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -208,8 +241,10 @@ android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#FF8813"
             android:clickable="true"
+
             app:layout_anchor="@+id/bottomAppBar2"
             app:layout_anchorGravity="top|center"
-            app:srcCompat="@drawable/ic_baseline_location_on_24" />
+            app:srcCompat="@drawable/ic_baseline_location_on_24"
+            android:focusable="true" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

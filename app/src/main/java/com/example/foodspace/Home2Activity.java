@@ -1,7 +1,9 @@
 package com.example.foodspace;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -35,6 +37,11 @@ private final int expandedHeight=116;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home2);
+        if(savedInstanceState!=null){
+            if(savedInstanceState.containsKey("expanded")){
+                expanded=savedInstanceState.getBoolean("expanded");
+            }
+        }
         recyclerViewCategory();
         recyclerRestaurant();
 
@@ -43,26 +50,32 @@ private final int expandedHeight=116;
         recyclerViewCategoryList=findViewById(R.id.recyclerView1);
        initRecycler();
 seemore=findViewById(R.id.seemore);
-seemore.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
+seemore.setOnClickListener(v-> setExpanded(!expanded));
+setExpanded(expanded);
 
-       //see the drawable at the end seemore.;
-        expanded=!expanded;
-        if (expanded){
-            expand(recyclerViewCategoryList);
-            seemore.setText("See Less");
-        }else{
-            collapse(recyclerViewCategoryList);
-            seemore.setText("See More");
-        }
-        recyclerViewCategoryList.invalidate();
+
+
     }
-});
+    private void setExpanded(boolean expanded){
+        this.expanded=expanded;
+        if(expanded){
+            expand(recyclerViewCategoryList);
+            seemore.setText("Show less");
 
+        }
+        else{
+            collapse(recyclerViewCategoryList);
+            seemore.setText("Show More");
+
+        }
+    }
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outstate){
+        outstate.putBoolean("expanded",expanded);
+        super.onSaveInstanceState(outstate);
     }
     private int pixelToDp(int pixels){
-        int dp=(int)(pixels * getResources().getDisplayMetrics().density);
+        int dp=(int)(116 * getResources().getDisplayMetrics().density);
         return dp;
     }
     private void initRecycler(){
@@ -71,6 +84,7 @@ foodItems=getItem(getApplicationContext());
         RecyclerAdapter recyclerAdapter=new RecyclerAdapter(this,foodItems);
         recyclerViewCategoryList.setAdapter(recyclerAdapter);
         recyclerAdapter.notifyDataSetChanged();
+        GridLayoutManager gridLayoutManager=(GridLayoutManager) recyclerViewCategoryList.getLayoutManager();
     }
 
     private List<PopularFoodItem>getItem(Context context){
@@ -115,16 +129,15 @@ foodItems=getItem(getApplicationContext());
 
         ValueAnimator valueAnimator=ValueAnimator.ofInt(view.getMeasuredHeight(),pixelToDp(expandedHeight)).setDuration(400);
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
-               int animatedValue=(int)valueAnimator.getAnimatedValue();
-                ViewGroup.LayoutParams lp=view.getLayoutParams();
-                lp.height=animatedValue;
+                int animatedValue = (int) valueAnimator.getAnimatedValue();
+                ViewGroup.LayoutParams lp = view.getLayoutParams();
+                lp.height = animatedValue;
                 view.setLayoutParams(lp);
-                if(animatedValue==0){
-
-                }
             }
+
         });
 valueAnimator.start();
     }
@@ -142,9 +155,7 @@ public void expand(final View view){
             ViewGroup.LayoutParams lp = view.getLayoutParams();
             lp.height = animatedValue;
             view.setLayoutParams(lp);
-            if (animatedValue == 0) {
 
-            }
         }
     });
 
