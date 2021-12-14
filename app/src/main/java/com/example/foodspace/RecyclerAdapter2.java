@@ -30,7 +30,7 @@ List<PopularFood>popularFoodsList;
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapter2.ViewHolder holder, int position) {
-holder.foodImage.setImageResource(popularFoodsList.get(position).getFoodImageURl());
+holder.foodImage.setBackgroundResource(popularFoodsList.get(position).getFoodImageURl());
 holder.resturantName.setText(popularFoodsList.get(position).getName());
 holder.rating.setText(popularFoodsList.get(position).getRating());
 holder.price.setText(popularFoodsList.get(position).getPrice());

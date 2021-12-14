@@ -7,30 +7,51 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Home2Activity extends AppCompatActivity {
 
 private RecyclerView recyclerViewCategoryList,recyclerViewRestuarant;
-TextView seemore;
-
+Button seemore;
+private BottomNavigationView bottomNavigationView;
 private List<PopularFoodItem> foodItems;
 private List<PopularFood>Restuarant;
+private FloatingActionButton floatingActionButton;
 private boolean expanded=false;
-private final int expandedHeight=116;
+private RecyclerAdapter.RecyclerViewClickListener listener;
+FirebaseAuth mAuth;
+
 
 
     @Override
@@ -44,12 +65,20 @@ private final int expandedHeight=116;
         }
         recyclerViewCategory();
         recyclerRestaurant();
+        bottomNavigationView=findViewById(R.id.BottomnavigationView);
+     
+        bottomNavigationView.setBackground(null);
+        bottomNavigationView.getMenu().getItem(1).setEnabled(false);
+        bottomNavigationView.setOnNavigationItemSelectedListener(navlistener);
+        bottomNavigationView.setItemRippleColor(null);
+bottomNavigationView.getMenu().getItem(0).setEnabled(false);
 
     }
     private void recyclerViewCategory(){
         recyclerViewCategoryList=findViewById(R.id.recyclerView1);
        initRecycler();
 seemore=findViewById(R.id.seemore);
+
 seemore.setOnClickListener(v-> setExpanded(!expanded));
 setExpanded(expanded);
 
@@ -57,15 +86,18 @@ setExpanded(expanded);
 
     }
     private void setExpanded(boolean expanded){
+
         this.expanded=expanded;
         if(expanded){
             expand(recyclerViewCategoryList);
-            seemore.setText("Show less");
+            seemore.setText("see less");
+            setButtonDrawable(R.drawable.show_less);
 
         }
         else{
             collapse(recyclerViewCategoryList);
-            seemore.setText("Show More");
+            seemore.setText("see more");
+            setButtonDrawable(R.drawable.ic_baseline_keyboard_arrow_down_24);
 
         }
     }
@@ -74,19 +106,33 @@ setExpanded(expanded);
         outstate.putBoolean("expanded",expanded);
         super.onSaveInstanceState(outstate);
     }
-    private int pixelToDp(int pixels){
-        int dp=(int)(116 * getResources().getDisplayMetrics().density);
+    private int pixelToDp(){
+        int dp=(int)(216 * getResources().getDisplayMetrics().density);
         return dp;
     }
     private void initRecycler(){
 foodItems=getItem(getApplicationContext());
-
-        RecyclerAdapter recyclerAdapter=new RecyclerAdapter(this,foodItems);
+setonClickListener();
+        RecyclerAdapter recyclerAdapter=new RecyclerAdapter(this,foodItems,listener);
         recyclerViewCategoryList.setAdapter(recyclerAdapter);
         recyclerAdapter.notifyDataSetChanged();
         GridLayoutManager gridLayoutManager=(GridLayoutManager) recyclerViewCategoryList.getLayoutManager();
     }
 
+    private void setonClickListener() {
+        listener=new RecyclerAdapter.RecyclerViewClickListener() {
+            @Override
+            public void onClick(View v, int postion) {
+                Intent i=new Intent(getApplicationContext(),expandedLayoutitemactivity.class);
+                i.putExtra("title",foodItems.get(postion).getTitle());
+                startActivity(i);
+                finish();
+
+            }
+        };
+    }
+
+    //food item in expandable layout
     private List<PopularFoodItem>getItem(Context context){
 
         List<PopularFoodItem>ret=new ArrayList<PopularFoodItem>();
@@ -100,10 +146,10 @@ foodItems=getItem(getApplicationContext());
         ret.add(new PopularFoodItem("Panner",drawableToBitmap(getDrawable(context,"image8"))));
         ret.add(new PopularFoodItem("Parathas",drawableToBitmap(getDrawable(context,"image9"))));
         ret.add(new PopularFoodItem("Pasta",drawableToBitmap(getDrawable(context,"image10"))));
-        ret.add(new PopularFoodItem("Pizza",drawableToBitmap(getDrawable(context,"image12"))));
-        ret.add(new PopularFoodItem("Rolls",drawableToBitmap(getDrawable(context,"image13"))));
-        ret.add(new PopularFoodItem("Subways",drawableToBitmap(getDrawable(context,"image14"))));
-        ret.add(new PopularFoodItem("Shake",drawableToBitmap(getDrawable(context,"image15"))));
+        ret.add(new PopularFoodItem("Rolls",drawableToBitmap(getDrawable(context,"image12"))));
+        ret.add(new PopularFoodItem("Subways",drawableToBitmap(getDrawable(context,"image13"))));
+        ret.add(new PopularFoodItem("Shake",drawableToBitmap(getDrawable(context,"image14"))));
+        ret.add(new PopularFoodItem("Pizza",drawableToBitmap(getDrawable(context,"pizza1"))));
 
         return ret;
     }
@@ -111,6 +157,9 @@ foodItems=getItem(getApplicationContext());
     public static Drawable getDrawable(Context context,String name){
         int resourceId=context.getResources().getIdentifier(name,"drawable",context.getPackageName());
         return AppCompatResources.getDrawable(context,resourceId);
+    }
+    private void setButtonDrawable(int imageResource){
+        seemore.setCompoundDrawablesWithIntrinsicBounds(0,0,imageResource,0);
     }
 
     public static Bitmap drawableToBitmap(Drawable drawable){
@@ -127,7 +176,7 @@ foodItems=getItem(getApplicationContext());
         view.measure(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
         final  int targetHeight=view.getMeasuredHeight();
 
-        ValueAnimator valueAnimator=ValueAnimator.ofInt(view.getMeasuredHeight(),pixelToDp(expandedHeight)).setDuration(400);
+        ValueAnimator valueAnimator=ValueAnimator.ofInt(view.getMeasuredHeight(),pixelToDp()).setDuration(400);
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 
             @Override
@@ -145,7 +194,7 @@ valueAnimator.start();
 public void expand(final View view){
         view.measure(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
         final int targetHeight=view.getMeasuredHeight();
-    ValueAnimator valueAnimator = ValueAnimator.ofInt(pixelToDp(expandedHeight),view.getMeasuredHeight())
+    ValueAnimator valueAnimator = ValueAnimator.ofInt(pixelToDp(),view.getMeasuredHeight())
             .setDuration(500);
 
     valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -161,6 +210,7 @@ public void expand(final View view){
 
     valueAnimator.start();
 }
+//food item in resturant
 private void recyclerRestaurant(){
 recyclerViewRestuarant=findViewById(R.id.resturantRecycler);
 RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(this,RecyclerView.VERTICAL,false);
@@ -174,7 +224,7 @@ List<PopularFood> getRestFood(){
         rest.add(new PopularFood("3.9","Punjabi Tadka","200 for one","North Indian ,Canadian"," This is Pure & Non veg restuarant",R.drawable.punjabi));
     rest.add(new PopularFood("4.0","Chat-Chit","100 for one","Fast-Food,Chat,GolGappe"," This is Pure veg restuarant",R.drawable.chat));
     rest.add(new PopularFood("4.1","Beijing Street","300 for one","Asian,Chinese,Thai"," This is Pure & Non veg restuarant",R.drawable.chinese));
-    rest.add(new PopularFood("4.0","Tossian Pizza","250 for one","Pizza ,Fast Food,Desserts"," This is Pure & Non veg restuarant",R.drawable.pizza));
+    rest.add(new PopularFood("4.0","Tossian Pizza","250 for one","Pizza ,Fast Food,Desserts"," This is Pure & Non veg restuarant",R.drawable.pizza1));
     rest.add(new PopularFood("4.2","BakeQeens","150 for one","Bakery"," This is Pure & Non veg Bakery ",R.drawable.cake));
     rest.add(new PopularFood("4.3","McDonald","290 for one","Burger, Fast Food,Coke,Icecream"," This is Pure & Non veg restuarant",R.drawable.mcd));
     rest.add(new PopularFood("3.9","Subways","150 for one","Subways,Fast Food,Drinks"," This is Pure & Non veg restuarant",R.drawable.subway));
@@ -188,4 +238,54 @@ return rest;
 
 
 }
+
+
+//about profile fragment
+
+    public void profile(View view) {
+        Intent i=new Intent(Home2Activity.this,profile.class);
+        startActivity(i);
+        finish();
+        overridePendingTransition(0,0);
+    }
+
+    public void locationMap(View view) {
+        BottomSheetDialog bottomSheetDialog=new BottomSheetDialog(Home2Activity.this,R.style.BottomSheetDialogTheme);
+        View bottomSheetView= LayoutInflater.from(getApplicationContext()).inflate(R.layout.mapbottomsheet,(LinearLayout)findViewById(R.id.bottomsheetmap));
+
+        bottomSheetView.findViewById(R.id.currentlocation).setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(getApplicationContext(),MapsActivity.class);
+                startActivity(i);
+                finish();
+                overridePendingTransition(0,0);
+
+            }
+        });
+        bottomSheetDialog.setContentView(bottomSheetView);
+        bottomSheetView.getLayoutParams().height=1500;
+        bottomSheetDialog.show();
+
+
+    }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navlistener=new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+          Intent selectedActivity=null;
+            if (item.getItemId() == R.id.nav_Dining) {
+
+
+                selectedActivity = new Intent(Home2Activity.this, Dinning.class);
+
+            }
+
+            startActivity(selectedActivity);
+            overridePendingTransition(0,0);
+            finish();
+            return true;
+        }
+    } ;
 }

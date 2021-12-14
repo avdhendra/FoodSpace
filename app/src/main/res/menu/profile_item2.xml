@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:title="Your Rating"
+    android:icon="@drawable/ic_baseline_star_outline_24"
+    />
+
+    <item
+    android:title="Food Order"
+
+        >
+    <menu>
+        <item
+            android:icon="@drawable/order"
+            android:title="Your Orders"
+            android:id="@+id/pro_Order"/>
+        <item
+            android:icon="@drawable/ic_baseline_favorite_border_24"
+            android:title="Favorite Orders"
+            android:id="@+id/pro_fav"/>
+        <item
+            android:icon="@drawable/book1"
+            android:title="Address Book"
+            android:id="@+id/pro_address"/>
+        <item
+            android:icon="@drawable/message"
+            android:title="Online Ordering Help"
+            android:id="@+id/pro_ordering_help"
+            />
+
+
+    </menu>
+
+    </item>
+    <item
+        android:title="About app">
+        <menu>
+<item
+    android:icon="@drawable/ic_icons8_info"
+    android:title="About"/>
+        </menu>
+    </item>
+    <item
+        android:title="">
+        <menu>
+            <item
+
+                android:title="Send Feedback"/>
+            <item
+
+                android:title="Report a Saftey emergency"/>
+            <item
+
+                android:title="Rate Us on the Play Store"/>
+            <item
+
+                android:title="Log Out"
+                android:id="@+id/logout"/>
+
+        </menu>
+    </item>
+
+
+</menu>

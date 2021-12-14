@@ -4,42 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+android:layout_alignParentBottom="true"
     android:background="#fff"
     tools:context=".Home2Activity">
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
 
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:text="Eat \nWhat makes you Happy"
-        android:textColor="#162553"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="10dp"
-android:layout_marginLeft="100dp"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/i2"
-        app:layout_constraintBottom_toTopOf="@+id/consts"
-        app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Eat \nWhat makes you Happy"
+            android:textColor="#162553"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
 
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent"
-         />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="115dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:onClick="profile"
+            android:src="@drawable/i2"
+            app:layout_constraintBottom_toTopOf="@+id/consts"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
 <androidx.constraintlayout.widget.ConstraintLayout
 
     android:layout_width="match_parent"
@@ -47,9 +52,11 @@ android:layout_marginLeft="100dp"
     android:layout_height="wrap_content"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
+    android:layout_marginTop="5dp"
+
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintBottom_toTopOf="@id/scrollView2"
+
     app:layout_constraintTop_toBottomOf="@id/textView2"
     >
 
@@ -62,189 +69,240 @@ android:layout_marginLeft="100dp"
         android:drawableStart="@drawable/ic_baseline_search_24"
         android:drawablePadding="8dp"
         android:hint="Restaurant name,cuisine,or a dish..."
-        android:padding="5dp"
         android:inputType="textPersonName"
+        android:padding="5dp"
         android:paddingVertical="10dp"
         android:paddingStart="16dp"
         android:textColorHint="#494646"
         android:textSize="18sp"
 
-app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-    <ScrollView
-        android:id="@+id/scrollView2"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="125dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:id="@+id/linear"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="wrap_content">
 
-            android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefreshLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
 
-                android:paddingHorizontal="15dp"
-                 android:id="@+id/constraint"
+
                 >
 
-                <ImageView
-                    android:id="@+id/img"
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/scrollView2"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:src="@drawable/dosa"
-                    app:layout_constraintBottom_toTopOf="@+id/textView7"
-
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Categories"
-                    android:textColor="#162553"
-                    android:textSize="15sp"
-android:layout_marginTop="120dp"
-                    android:textStyle="bold"
-
-                    app:layout_constraintEnd_toEndOf="parent"
-
-                    app:layout_constraintHorizontal_bias="0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0" />
-
-
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="See Resturant Around You"
-                    android:textColor="#162553"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0"
-                    android:layout_marginTop="10dp"
-                  app:layout_constraintTop_toBottomOf="@+id/nestedscrollView"
-
-                    app:layout_constraintStart_toStartOf="parent"
-                    />
-
-
-<androidx.core.widget.NestedScrollView
-    android:layout_width="0dp"
-    android:id="@+id/nestedscrollView"
-    android:layout_height="wrap_content"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/textView7"
-
-    >
-                <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/nestedscrollView"
-                    >
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView1"
-        android:layout_width="match_parent"
-        android:layout_height="116dp" />
-    <TextView
-        android:id="@+id/seemore"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/seemore"
-        android:gravity="center"
-        android:text="See More "
-        android:textColor="#494646"
-        app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_down_24"
-/>
-</LinearLayout>
-</androidx.core.widget.NestedScrollView>
-
-
-
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/resturantRecycler"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintTop_toBottomOf="@id/textView3"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="125dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-
-                    />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
 
+                    <androidx.constraintlayout.widget.ConstraintLayout
 
-        </LinearLayout>
+                        android:id="@+id/constraint"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="horizontal"
+                            android:background="@drawable/off3"
+                            app:layout_constraintBottom_toTopOf="@+id/textView7"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
 
 
-    </ScrollView>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1"
-        app:layout_constraintHorizontal_bias="0"
-        >
+                        </LinearLayout>
 
-        <com.google.android.material.bottomappbar.BottomAppBar
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="190dp"
+                            android:text="Categories"
+                            android:textColor="#162553"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+
+
+                            app:layout_constraintEnd_toEndOf="parent"
+
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="See Resturant Around You"
+                            android:textColor="#162553"
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+
+                            app:layout_constraintTop_toBottomOf="@+id/nestedscrollView" />
+
+
+                        <androidx.core.widget.NestedScrollView
+                            android:id="@+id/nestedscrollView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/textView7"
+
+                            >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/nestedscrollView">
+
+
+
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/recyclerView1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="200dp"
+                                    android:layout_weight="4"
+                                    android:nestedScrollingEnabled="false"
+                                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                                    app:spanCount="4" />
+                                <Button
+                                    android:id="@+id/seemore"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:background="@drawable/seemore"
+                                    android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+                                    android:fontFamily="@font/allerta"
+                                    android:gravity="center"
+                                    android:minHeight="0dp"
+                                    android:paddingStart="100dp"
+                                    android:paddingEnd="100dp"
+                                    android:text="see more"
+                                    android:textAllCaps="false"
+                                    android:textColor="#494646"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </androidx.core.widget.NestedScrollView>
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/resturantRecycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/textView3"
+
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.core.widget.NestedScrollView>
+
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        </FrameLayout>
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinatorLayout2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-android:layout_gravity="bottom"
-            android:gravity="bottom"
-            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
-            android:id="@+id/bottomAppBar2"/>
+            android:layout_height="90dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true">
+
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:id="@+id/bottomAppBar2"
+                style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="?android:attr/windowBackground"
+                android:gravity="bottom"
+                app:fabCradleMargin="10dp"
+                app:fabCradleRoundedCornerRadius="50dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+
+                    >
+
+                    <com.google.android.material.bottomnavigation.BottomNavigationView
+
+                        android:id="@+id/BottomnavigationView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="10dp"
+android:soundEffectsEnabled="false"
+
+                        android:background="@android:color/transparent"
+                        app:itemIconTint="@color/bottom_icon"
+                        app:itemTextColor="@color/bottom_icon"
+                        app:labelVisibilityMode="labeled"
+                        app:menu="@menu/bottom_menu" />
 
 
+                </LinearLayout>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FF8813"
-            android:clickable="true"
+            </com.google.android.material.bottomappbar.BottomAppBar>
 
-            app:layout_anchor="@+id/bottomAppBar2"
-            app:layout_anchorGravity="top|center"
-            app:srcCompat="@drawable/ic_baseline_location_on_24"
-            android:focusable="true" />
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FF8813"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="locationMap"
+                app:layout_anchor="@+id/bottomAppBar2"
+                app:layout_anchorGravity="top|center"
+                app:maxImageSize="30dp"
+                app:srcCompat="@drawable/ic_baseline_location_on_24" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

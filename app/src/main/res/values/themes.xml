@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.FoodSpace" parent="Theme.AppCompat.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">#FAFAFA</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -12,5 +12,13 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+       /* <item name="actionButtonStyle">@style/BetterActionButtons</item>*/
+    </style>
+    //THIS IS THE STYLE WHICH YOU CAN PLAY WITH
+    <style name="BetterActionButtons" parent="Widget.AppCompat.ActionButton">
+        <item name="paddingStart">12dp</item>
+        <item name="paddingEnd">12dp</item>
+        <item name="minWidth">50dp</item>
+        <item name="minHeight">50dp</item>
     </style>
 </resources>

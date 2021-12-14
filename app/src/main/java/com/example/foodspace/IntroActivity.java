@@ -13,18 +13,25 @@ Button getStarted;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
-       getStarted=findViewById(R.id.button2);
-       getStarted.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-               intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-               intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-               startActivity(intent);
-           }
-       });
 
     }
+
+    public void getStarted(View view) {
+        Intent intent=new Intent(getApplicationContext(),com.example.foodspace.PhoneAuth.class);
+        startActivity(intent);
+        finish();
+        overridePendingTransition(0,0);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Intent intent=new Intent(getApplicationContext(),com.example.foodspace.PhoneAuth.class);
+        startActivity(intent);
+        finish();
+        overridePendingTransition(0,0);
+    }
+
+
 }

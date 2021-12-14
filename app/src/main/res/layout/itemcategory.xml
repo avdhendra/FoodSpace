@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:elevation="15dp"
+    app:cardBackgroundColor="#FFFFFF"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="30dp"
+    app:cardElevation="10dp"
+    app:cardPreventCornerOverlap="false"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="2dp"
+    android:layout_marginStart="2dp"
+
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+
+        android:id="@+id/fooditem"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+
+        android:background="@drawable/i"
+
+        />
+
+
+    <TextView
+        android:id="@+id/ResturantName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bapu Di Rasoi"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="255dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintBottom_toBottomOf="@+id/foodstyle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rate"
+        android:layout_gravity="right"
+        android:layout_marginTop="260dp"
+        android:weightSum="2"
+        android:layout_marginEnd="20dp"
+        >
+        <TextView
+            android:id="@+id/rating"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="4.0"
+            android:layout_margin="2dp"
+            android:textSize="15sp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_baseline_star_24"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="290dp"
+        android:layout_marginEnd="20dp"
+        android:weightSum="2"
+        >
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/rupee"/>
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="200 for one"
+            android:textColor="@color/black"
+            android:fontFamily="@font/alef"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/foodstyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/alef"
+        android:text="North Indian,Chinese,Fast Food"
+        android:textColor="#4C4C4C"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0"
+
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="330dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginStart="20dp"
+        android:background="#AAAAAA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/halResturant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This is pure veg restuarant"
+        android:textColor="@color/black"
+        android:layout_marginStart="60dp"
+        android:layout_gravity="top"
+        android:gravity="center"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="1"
+
+        android:layout_marginTop="330dp"
+        />
+
+
+
+
+
+
+    <ImageView
+
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/leaf"
+        app:layout_constraintHorizontal_bias="0"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="330dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+</androidx.cardview.widget.CardView>
+
+
+

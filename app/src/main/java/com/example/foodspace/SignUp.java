@@ -10,12 +10,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.FirebaseApp;
+
 
 public class SignUp extends AppCompatActivity {
 Button Signup,Login;
 EditText Name,Email,Password,Mobile_number;
 TextInputLayout nameInput,emailInput,passwordInput,numberInput;
 
+private FirebaseApp mauth;
 
 
     @Override
@@ -35,29 +38,29 @@ TextInputLayout nameInput,emailInput,passwordInput,numberInput;
         //Button
         Signup=findViewById(R.id.Signup);
         Login=findViewById(R.id.Login);
+mauth=FirebaseApp.getInstance();
 
-        Login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-               intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
-                startActivity(intent);
-
-            }
-        });
 
 
     }
     public void onBackPressed(){
         Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
         startActivity(intent);
+        finish();
+        overridePendingTransition(0,0);
     }
 
+/*    public void signup(View view) {
+
+    }
+*/
+    public void login(View view) {
+        Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(intent);
+        finish();
+        overridePendingTransition(0,0);
+    }
+
+    public void signup(View view) {
+    }
 }

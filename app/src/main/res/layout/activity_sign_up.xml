@@ -11,7 +11,7 @@
         android:id="@+id/Signup"
         android:layout_width="160dp"
         android:layout_height="54dp"
-
+android:onClick="signup"
         android:background="@drawable/button_background_blue"
         android:text="Sign Up"
         android:textSize="20sp"
@@ -25,7 +25,7 @@
         android:id="@+id/Login"
         android:layout_width="160dp"
         android:layout_height="54dp"
-
+android:onClick="login"
         android:background="@drawable/button_background_blue"
         android:text="Login"
         android:textSize="20sp"
@@ -181,7 +181,10 @@ android:layout_width="240dp"
             android:inputType="number"
             android:maxLines="1"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 

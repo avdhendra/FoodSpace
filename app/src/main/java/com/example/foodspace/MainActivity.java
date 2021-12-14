@@ -53,30 +53,7 @@ private TextInputLayout emailLayout,passwordLayout;
  SignUp=findViewById(R.id.Signup);
 
 
-
- SignUp.setOnClickListener(new View.OnClickListener() {
-     @Override
-     public void onClick(View view) {
-Intent intent=new Intent(getApplicationContext(), com.example.foodspace.SignUp.class);
-         intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
-startActivity(intent);
-     }
- });
-
-
- login.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        Intent intent=new Intent(getApplicationContext(), com.example.foodspace.Home2Activity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        startActivity(intent);
-    }
-});
-
-    }
+}
     //OnBackpressed is the method of class Appcompat
     public  void onBackPressed(){
 //if second click happened within this second
@@ -90,6 +67,21 @@ startActivity(intent);
     }
     //this when we click after 2 second then backpressed is match with system time
     backPressed=System.currentTimeMillis();
+    }
+
+    public void login(View view) {
+        Intent intent=new Intent(getApplicationContext(), com.example.foodspace.Home2Activity.class);
+        startActivity(intent);
+        finish();
+        overridePendingTransition(0,0);
+    }
+
+    public void Signup(View view) {
+        Intent intent=new Intent(getApplicationContext(), com.example.foodspace.SignUp.class);
+        startActivity(intent);
+        finish();
+        overridePendingTransition(0,0);
+
     }
 }
 /**

@@ -16,11 +16,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
     private List<PopularFoodItem> popItem;
-
+private RecyclerViewClickListener listener;
     Context context;
-    public RecyclerAdapter(Context context,List<PopularFoodItem>popItem){
+    public RecyclerAdapter(Context context,List<PopularFoodItem>popItem,RecyclerViewClickListener listener){
      this.popItem=popItem;
         this.context=context;
+   this.listener=listener;
+
     }
     @NonNull
     @Override
@@ -43,13 +45,22 @@ holder.textView.setText(popItem.get(position).getTitle());
         return popItem.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public  class ViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener{
         public ImageView imageView;
         public TextView textView;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView=itemView.findViewById(R.id.img_child);
             textView=itemView.findViewById(R.id.textItem);
+        itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View view) {
+listener.onClick(view,getAdapterPosition());
+        }
+    }
+    public interface RecyclerViewClickListener{
+        void onClick(View v,int postion);
     }
 }

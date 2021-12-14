@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+
+    android:id="@+id/bottomsheetmap"
+    android:background="@drawable/bottomsheetbackground"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/abel"
+        android:text="Search location"
+        android:textColor="@color/black"
+       android:paddingStart="10dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+
+        />
+    <EditText
+        android:id="@+id/search"
+android:elevation="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/mapsearch"
+        android:drawableStart="@drawable/ic_baseline_search_24"
+        android:drawablePadding="8dp"
+        android:hint="Search for your location..."
+        android:padding="5dp"
+        android:inputType="textPersonName"
+        android:paddingVertical="10dp"
+        android:paddingStart="16dp"
+        android:textColorHint="#494646"
+        android:textSize="18sp"
+/>
+    <TextView
+
+        android:id="@+id/currentlocation"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:drawablePadding="5dp"
+        android:padding="5dp"
+        android:text="  Use current location"
+        android:drawableStart="@drawable/ic_baseline_my_location_24"
+        android:textSize="15dp"
+        android:textColor="#910541"
+        />
+    <View
+        android:id="@+id/view"
+        android:layout_width="380dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="0dp"
+        android:background="#C6BEBE"
+       />
+    <TextView
+       android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recent locations"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:paddingStart="16dp"
+        />
+<!--
+    <androidx.recyclerview.widget.RecyclerView
+  android:layout_marginTop="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/bottomsheetRecycler"
+    />
+    -->
+    <View
+        android:layout_width="380dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="0dp"
+        android:background="#C6BEBE"/>
+</LinearLayout>

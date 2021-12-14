@@ -34,4 +34,5 @@
     <color name="whiteTextColor">#fff</color>
 
     <color name="primaryTextColor">#11C9CF</color>
+    <color name="gray_1">#C0C0C0</color>
 </resources>
