@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".DiningFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="vertical"
+        android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+android:orientation="vertical"
+android:padding="2dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="About Restaurant"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/diningimage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/i"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:padding="2dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Open Now"
+                    android:id="@+id/time"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:drawablePadding="10dp"
+                    app:drawableStartCompat="@drawable/ic_baseline_access_time_24" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="400 for two"
+                    android:textSize="18sp"
+                    android:id="@+id/perperson"
+                    android:textColor="@color/black"
+                    android:drawablePadding="10dp"
+                    app:drawableStartCompat="@drawable/rupee" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Serve Fast Food,Chinese,North Indian"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:id="@+id/foodType"
+                    android:drawablePadding="10dp"
+                    app:drawableStartCompat="@drawable/ic_baseline_fastfood_24" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3.5 Km"
+                    android:id="@+id/fooddistance"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:drawablePadding="10dp"
+                    app:drawableStartCompat="@drawable/ic_baseline_location_on_24" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+<View
+    android:layout_width="match_parent"
+    android:layout_height="0.5dp"
+    android:background="#8A8A8A"
+    android:layout_marginTop="10dp"
+    />
+</LinearLayout>
+
+
+    </ScrollView>
+
+
+</FrameLayout>

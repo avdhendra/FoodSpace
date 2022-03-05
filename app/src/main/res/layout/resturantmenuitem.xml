@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+       android:padding="2dp"
+        android:gravity="start"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="5dp"
+                android:src="@drawable/pure"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/dishesname"
+                android:layout_height="wrap_content"
+                android:text="Veg Shammi Snacks Wraps"
+                android:textColor="@color/black"
+                android:gravity="bottom"
+                android:textSize="22sp"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/rupee"/>
+                <TextView
+                    android:id="@+id/dishesprice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="200"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/alef"
+                    />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="83dp"
+                android:layout_height="98dp"
+                android:id="@+id/dishesImage"
+                android:layout_gravity="end"
+                android:background="@drawable/dosa" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/elegantbutton"
+android:layout_marginTop="2dp"
+    android:layout_gravity="end"
+    android:gravity="center"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_add_24"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:id="@+id/itemcount"
+       android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:layout_height="wrap_content"
+        android:text="Add"/>
+
+</LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+<View
+    android:layout_width="match_parent"
+    android:layout_height="0.5dp"
+    android:layout_marginTop="5dp"
+    android:background="#BABABA"
+    />
+</LinearLayout>

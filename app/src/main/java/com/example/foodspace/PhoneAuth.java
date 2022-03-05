@@ -1,9 +1,14 @@
 package com.example.foodspace;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.PendingIntent;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,6 +17,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.credentials.Credential;
+import com.google.android.gms.auth.api.credentials.Credentials;
+import com.google.android.gms.auth.api.credentials.CredentialsApi;
+import com.google.android.gms.auth.api.credentials.CredentialsOptions;
+import com.google.android.gms.auth.api.credentials.HintRequest;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -28,17 +40,59 @@ EditText edt1;
     private long backPressed;
 private FirebaseAuth mAuth;
 private CountryCodePicker codePicker1;
+String countrycode;
+String phoneNumber;
 public static final String TAG ="Hi";
-private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
+
+private int count=1;
+private final int CREDENTIAL_PICKER_REQUEST = 1;
+private Button materialButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_auth);
         edt1=findViewById(R.id.phonenumber);
+        materialButton=findViewById(R.id.materialButton);
+
+        edt1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(count==1)
+                {
+                    try {
+                        phoneSelection();
+                    } catch (IntentSender.SendIntentException e) {
+                        e.printStackTrace();
+                    }
+                    count++;
+
+                }
+            }
+        });
         codePicker1=findViewById(R.id.countryCodePicker);
 mAuth=FirebaseAuth.getInstance();
 
 
+    }
+
+    private void phoneSelection() throws IntentSender.SendIntentException {
+        HintRequest hintRequest=new HintRequest.Builder().setPhoneNumberIdentifierSupported(true).build();
+        CredentialsOptions options=new CredentialsOptions.Builder().forceEnableSaveDialog().build();
+        PendingIntent credentialsClient=Credentials.getClient(getApplicationContext(),options).getHintPickerIntent(hintRequest);
+        startIntentSenderForResult(credentialsClient.getIntentSender(),CREDENTIAL_PICKER_REQUEST,null,0,0,0,new Bundle());
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == CREDENTIAL_PICKER_REQUEST && resultCode == RESULT_OK)
+        {
+            Credential credential=data.getParcelableExtra(Credential.EXTRA_KEY);
+            edt1.setText(credential.getId().substring(3));
+        }
+        else if(requestCode == CREDENTIAL_PICKER_REQUEST && resultCode == CredentialsApi.ACTIVITY_RESULT_NO_HINTS_AVAILABLE){
+            Toast.makeText(this, "No phone numbers found", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void emailActivity(View view) {
@@ -84,47 +138,56 @@ mAuth=FirebaseAuth.getInstance();
 
         }
         else {
-            otpSend();
+            checkNumber();
+
         }
     }
 
-    private void otpSend() {
-        mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-
-            @Override
-            public void onVerificationCompleted(PhoneAuthCredential credential) {
-             //   Toast.makeText(PhoneAuth.this,"Otp sent Successfully",Toast.LENGTH_SHORT).show();
-
-            }
-
-            @Override
-            public void onVerificationFailed(FirebaseException e) {
-Toast.makeText(PhoneAuth.this,e.getLocalizedMessage(),Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onCodeSent(@NonNull String verificationId,
-                                   @NonNull PhoneAuthProvider.ForceResendingToken token) {
-Intent i1=new Intent(PhoneAuth.this,OtpNumber.class);
-i1.putExtra("phone",edt1.getText().toString().trim());
-i1.putExtra("countrycode",codePicker1.getSelectedCountryCode());
-i1.putExtra("verification",verificationId);
-finish();
-startActivity(i1);
-
-
-            }
-        };
-
-        Log.d(TAG,codePicker1.getSelectedCountryCode()+""+edt1.getText().toString().trim());
-        PhoneAuthOptions options =
-                PhoneAuthOptions.newBuilder(mAuth)
-                        .setPhoneNumber("+"+codePicker1.getSelectedCountryCode()+""+edt1.getText().toString().trim())       // Phone number to verify
-                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-                        .setActivity(this)                 // Activity (for callback binding)
-                        .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
-                        .build();
-        PhoneAuthProvider.verifyPhoneNumber(options);
+    private void checkNumber() {
+        countrycode=codePicker1.getSelectedCountryCodeWithPlus();
+        phoneNumber=countrycode+edt1.getText().toString();
+        notifyUser();
 
     }
+
+    private void notifyUser() {
+   /*     MaterialAlertDialogBuilder materialAlertDialogBuilder=new MaterialAlertDialogBuilder(this).setMessage("We will be verifying the Phone Number "+phoneNumber+"Is this Ok or Would you life to edit the number ?").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                ShowOtpActivity();
+            }
+        }).setNegativeButton("Edit", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+           dialogInterface.dismiss();
+           edt1.setFocusable(true);
+            }
+        });
+        materialAlertDialogBuilder.setCancelable(false);
+        materialAlertDialogBuilder.show();*/
+
+        AlertDialog.Builder builder=new AlertDialog.Builder(this).setMessage("We will be verifying the Phone Number "+phoneNumber+" Is this Ok or Would you like to edit the number ?").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                ShowOtpActivity();
+            }
+        }).setNegativeButton("Edit", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+                edt1.setFocusable(true);
+            }
+        });
+        builder.setCancelable(false);
+        builder.show();
+    }
+
+    private void ShowOtpActivity() {
+        Intent i1=new Intent(PhoneAuth.this,OtpNumber.class);
+        i1.putExtra("phone_number",phoneNumber);
+        finish();
+        startActivity(i1);
+    }
+
+
 }

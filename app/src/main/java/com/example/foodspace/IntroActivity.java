@@ -25,13 +25,21 @@ Button getStarted;
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onStart() {
+        super.onStart();
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
         Intent intent=new Intent(getApplicationContext(),com.example.foodspace.PhoneAuth.class);
         startActivity(intent);
         finish();
         overridePendingTransition(0,0);
     }
+
+
 
 
 }

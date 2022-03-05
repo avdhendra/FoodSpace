@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".OtpNumber">
 
     <LinearLayout
@@ -23,16 +24,13 @@
             android:layout_height="wrap_content"
             android:onClick="backward"
             android:src="@drawable/ic_baseline_keyboard_backspace_24"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+           android:layout_marginStart="10dp"
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="50dp"
 
             android:gravity="center"
             android:text="OTP VERIFICATION"
@@ -50,9 +48,7 @@
         android:text="We Have Sent a verification code to "
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+        />
 
     <TextView
         android:id="@+id/phonenumber"
@@ -64,9 +60,7 @@
         android:text="+91-9305509034"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+         />
 
     <LinearLayout
         android:id="@+id/linearLayout4"
@@ -75,50 +69,71 @@
         android:layout_marginTop="30dp"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phonenumber">
+        >
 
         <EditText
             android:id="@+id/otpnum"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_gravity="center"
+            android:background="@drawable/otpback"
             android:gravity="center"
-
-            android:background="@drawable/otpback" />
+            android:hint="------"
+            android:textColor="@color/black"
+            android:maxLines="1"
+            android:maxLength="6"
+            android:letterSpacing="0.8"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:textColorHint="@color/black" />
     </LinearLayout>
 
-    <Button
-        android:layout_width="150dp"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Resend Sms"
-        android:id="@+id/resendSms"
-        android:padding="10dp"
-        android:onClick="ResendSms"
-        android:layout_marginTop="20dp"
-        app:layout_constraintHorizontal_bias="0"
-        android:layout_marginStart="20dp"
-        android:background="@drawable/sendotp"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
-    <Button
-        android:layout_width="150dp"
+        android:padding="4dp"
+        android:text="Enter 6-digit code"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="15dp"
+       />
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Verify"
-        android:onClick="verify"
-        android:id="@+id/verify"
-        android:layout_marginTop="20dp"
-        app:layout_constraintHorizontal_bias="1"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        >
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Resend Sms"
+            android:id="@+id/resendSms"
 
-        android:background="@drawable/sendotp"
-        android:textSize="20sp"
-        android:padding="10dp"
-        android:layout_marginEnd="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+            android:onClick="ResendSms"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginStart="10dp"
+            android:background="@drawable/sendotp"
+            android:textSize="18sp"
+            />
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Verify"
+            android:onClick="verify"
+            android:id="@+id/verify"
+            android:layout_marginStart="30dp"
+            app:layout_constraintHorizontal_bias="1"
+
+            android:background="@drawable/sendotp"
+            android:textSize="18sp"
+
+            android:layout_marginEnd="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+    </LinearLayout>
+
+</LinearLayout>

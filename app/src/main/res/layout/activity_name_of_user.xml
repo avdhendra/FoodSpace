@@ -87,30 +87,33 @@ android:id="@+id/nameUser"
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circleImageView3"
         android:layout_width="300dp"
-
+android:onClick="getImage"
+        android:scaleType="centerCrop"
         android:layout_height="300dp"
-        android:src="@drawable/about"
+        android:src="@drawable/defaultavatar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PasswordInput" />
+        app:layout_constraintTop_toBottomOf="@+id/PasswordInput"
+        app:layout_constraintVertical_bias="0.195" />
+
     <Button
+        android:id="@+id/resendSms"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Continue"
-        android:id="@+id/resendSms"
-        android:padding="10dp"
-        android:onClick="Continue"
-        android:layout_marginTop="20dp"
-        app:layout_constraintHorizontal_bias="0"
         android:layout_marginStart="120dp"
+        android:layout_marginTop="72dp"
         android:background="@drawable/sendotp"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/circleImageView3"
         android:gravity="center"
+        android:onClick="Continue"
+        android:padding="10dp"
+        android:text="Continue"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circleImageView3"
 
         />
 
