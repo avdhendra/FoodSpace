@@ -1,10 +1,12 @@
 package com.example.foodspace;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -16,10 +18,11 @@ import androidx.recyclerview.widget.RecyclerView;
 public class RecyclerAdapter7 extends RecyclerView.Adapter<RecyclerAdapter7.ViewHolder>{
     List<restaurantData> restaurantData1;
     Context context;
-
-    public RecyclerAdapter7(List<restaurantData> restaurantData1, Context context) {
+    private RecyclerViewClickListener listener;
+    public RecyclerAdapter7(List<restaurantData> restaurantData1, Context context, RecyclerAdapter7.RecyclerViewClickListener listener) {
         this.restaurantData1 = restaurantData1;
         this.context = context;
+        this.listener=listener;
     }
 
     @NonNull
@@ -42,15 +45,25 @@ holder.image.setBackgroundResource(restaurantData1.get(position).getImage());
         return restaurantData1.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView title,price;
         ImageView image;
-
+LinearLayout addItem;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             title=itemView.findViewById(R.id.dishesname);
             price=itemView.findViewById(R.id.dishesprice);
             image=itemView.findViewById(R.id.dishesImage);
+            addItem=itemView.findViewById(R.id.addItem);
+            addItem.setOnClickListener(this);
+
         }
+        @Override
+        public void onClick(View view) {
+            listener.onClick(view,getAdapterPosition());
+        }
+    }
+    public interface RecyclerViewClickListener{
+        void onClick(View v,int postion);
     }
 }

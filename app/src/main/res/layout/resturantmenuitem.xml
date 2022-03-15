@@ -68,6 +68,7 @@
 <LinearLayout
     android:layout_width="wrap_content"
     android:orientation="horizontal"
+    android:id="@+id/addItem"
     android:background="@drawable/elegantbutton"
 android:layout_marginTop="2dp"
     android:layout_gravity="end"

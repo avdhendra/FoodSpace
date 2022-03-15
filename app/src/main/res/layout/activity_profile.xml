@@ -4,19 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   android:padding="10dp"
+   android:padding="5dp"
     android:orientation="vertical"
    android:background="@color/white"
     tools:context=".profile">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="backward"
-        android:src="@drawable/ic_baseline_keyboard_backspace_24"
-
-        android:padding="10dp"
-        />
+  <androidx.appcompat.widget.Toolbar
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:navigationIcon="@drawable/ic_baseline_keyboard_backspace_24"
+      />
 
                <LinearLayout
                 android:id="@+id/constraintLayout"
@@ -63,6 +60,7 @@
                       android:textColor="@color/black"
                       android:textSize="12sp"
                       android:gravity="center"
+                          android:onClick="ShowActivity"
                           app:drawableEndCompat="@drawable/ic_baseline_arrow_right_24"
                       android:padding="2dp" />
 

@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,12 +18,14 @@ public class profile extends AppCompatActivity {
 private RecyclerView recyclerViewSetting1,recyclerViewSetting2;
     private RecyclerAdapter.RecyclerViewClickListener listener;
     private RecyclerAdapter6.RecyclerViewClickListener listener2;
+    private TextView viewActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         recyclerViewSetting1=findViewById(R.id.recyclerView1);
         recyclerViewSetting2=findViewById(R.id.recyclerView2);
+        viewActivity=findViewById(R.id.viewActivity);
         RecyclerSetting1();
         RecyclerSetting2();
 
@@ -99,5 +102,12 @@ listener2=new RecyclerAdapter6.RecyclerViewClickListener() {
 
 
     public void backward(View view) {
+    }
+
+    public void ShowActivity(View view) {
+        Intent i=new Intent(this,AboutYouActivity.class);
+        startActivity(i);
+        finish();
+        overridePendingTransition(0,0);
     }
 }

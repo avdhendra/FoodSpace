@@ -7,7 +7,12 @@
     android:id="@+id/bottomsheetmap"
     android:background="@drawable/bottomsheetbackground"
     android:layout_height="match_parent">
-
+<ImageView
+    android:layout_width="70dp"
+    android:layout_height="wrap_content"
+    android:scaleType="centerCrop"
+    android:src="@drawable/ic_baseline_remove_24"
+    android:layout_gravity="center|top"/>
     <TextView
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
