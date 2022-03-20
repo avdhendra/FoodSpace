@@ -204,7 +204,7 @@ android:layout_alignParentBottom="true"
                                     android:nestedScrollingEnabled="false"
                                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                                     app:spanCount="4" />
-                                <Button
+                                <TextView
                                     android:id="@+id/seemore"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -214,6 +214,7 @@ android:layout_alignParentBottom="true"
                                     android:fontFamily="@font/allerta"
                                     android:gravity="center"
                                     android:minHeight="0dp"
+
                                     android:paddingStart="100dp"
                                     android:paddingEnd="100dp"
                                     android:text="see more"
@@ -302,6 +303,7 @@ android:soundEffectsEnabled="false"
                 app:layout_anchor="@+id/bottomAppBar2"
                 app:layout_anchorGravity="top|center"
                 app:maxImageSize="30dp"
+app:tint="@android:color/white"
                 app:srcCompat="@drawable/ic_baseline_location_on_24" />
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
     </RelativeLayout>

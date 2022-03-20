@@ -188,7 +188,7 @@ android:layout_marginTop="5dp"
                   android:nestedScrollingEnabled="false"
                   app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                   app:spanCount="4" />
-              <Button
+              <TextView
                   android:id="@+id/seemore1"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
@@ -274,6 +274,7 @@ android:layout_marginTop="5dp"
         android:onClick="locationMap"
         app:layout_anchor="@+id/bottomAppBar2"
         app:layout_anchorGravity="top|center"
+        app:tint="@android:color/white"
         app:maxImageSize="30dp"
         app:srcCompat="@drawable/ic_baseline_location_on_24" />
   </androidx.coordinatorlayout.widget.CoordinatorLayout>

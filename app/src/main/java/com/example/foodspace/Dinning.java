@@ -23,6 +23,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -36,7 +37,7 @@ public class Dinning extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private boolean expanded=false;
     private RecyclerView recyclerViewplaceList,recyclerViewRestuarant;
-    Button seemore;
+    TextView seemore;
     private List<PopularPlaces>placesItem;
     private List<PopularRestaurant>Restuarantplace;
     @Override

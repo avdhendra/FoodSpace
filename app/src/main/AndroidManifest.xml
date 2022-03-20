@@ -12,6 +12,27 @@
         android:theme="@style/Theme.FoodSpace"
         tools:replace="android:theme">
         <activity
+            android:name=".Forgot_password"
+            android:exported="false" />
+        <activity
+            android:name=".Search_Restaurant"
+            android:exported="false" />
+        <activity
+            android:name=".ReviewSearch"
+            android:exported="false" />
+        <activity
+            android:name=".Common_Search"
+            android:exported="false" />
+        <activity
+            android:name=".Add_Item"
+            android:exported="false" />
+        <activity
+            android:name=".Add_Restaurant"
+            android:exported="false" />
+        <activity
+            android:name=".AddReview"
+            android:exported="false" />
+        <activity
             android:name=".Edit_Profile"
             android:exported="false" />
         <activity

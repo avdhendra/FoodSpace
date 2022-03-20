@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.credentials.Credential;
@@ -34,7 +35,7 @@ import com.hbb20.CountryCodePicker;
 
 import java.util.concurrent.TimeUnit;
 
-public class PhoneAuth extends AppCompatActivity {
+public class PhoneAuth extends BaseActivity {
 EditText edt1;
     private static final int TIME_INTERVAL=2000;
     private long backPressed;
@@ -46,7 +47,7 @@ public static final String TAG ="Hi";
 
 private int count=1;
 private final int CREDENTIAL_PICKER_REQUEST = 1;
-private Button materialButton;
+private TextView materialButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -151,21 +152,6 @@ mAuth=FirebaseAuth.getInstance();
     }
 
     private void notifyUser() {
-   /*     MaterialAlertDialogBuilder materialAlertDialogBuilder=new MaterialAlertDialogBuilder(this).setMessage("We will be verifying the Phone Number "+phoneNumber+"Is this Ok or Would you life to edit the number ?").setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                ShowOtpActivity();
-            }
-        }).setNegativeButton("Edit", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-           dialogInterface.dismiss();
-           edt1.setFocusable(true);
-            }
-        });
-        materialAlertDialogBuilder.setCancelable(false);
-        materialAlertDialogBuilder.show();*/
-
         AlertDialog.Builder builder=new AlertDialog.Builder(this).setMessage("We will be verifying the Phone Number "+phoneNumber+" Is this Ok or Would you like to edit the number ?").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

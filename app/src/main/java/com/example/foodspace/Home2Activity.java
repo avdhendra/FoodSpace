@@ -36,6 +36,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import org.w3c.dom.Text;
+
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +45,7 @@ import java.util.List;
 public class Home2Activity extends AppCompatActivity {
 
 private RecyclerView recyclerViewCategoryList,recyclerViewRestuarant;
-Button seemore;
+TextView seemore;
 private BottomNavigationView bottomNavigationView;
 private List<PopularFoodItem> foodItems;
 private List<PopularFood>Restuarant;

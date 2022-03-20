@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.facebook.login.Login;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,11 +82,17 @@ Intent i=new Intent(getApplicationContext(),Bookmarks.class);
 listener2=new RecyclerAdapter6.RecyclerViewClickListener() {
     @Override
     public void onClick(View v, int postion) {
-        if(settingItem2.get(postion).getTitle().equalsIgnoreCase("About"));
+        if(settingItem2.get(postion).getTitle().equalsIgnoreCase("About"))
         {
             Intent i=new Intent(getApplicationContext(),RestaurantMenu.class);
             startActivity(i);
             finish();
+        }
+        if(settingItem2.get(postion).getTitle().equalsIgnoreCase("Logout")){
+            Intent i=new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(i);
+            finish();
+
         }
     }
 };

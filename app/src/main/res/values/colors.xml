@@ -35,4 +35,6 @@
 
     <color name="primaryTextColor">#11C9CF</color>
     <color name="gray_1">#C0C0C0</color>
+    <color name="colorSnackBarSuccess">#8BC34A</color>
+    <color name="colorSnackBarError">#F72400</color>
 </resources>

@@ -1,9 +1,11 @@
 package com.example.foodspace;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,17 +13,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
-private Button login, SignUp;
-private EditText Email,Password;
+import java.util.Objects;
+
+public class MainActivity extends BaseActivity{
+private TextView login, SignUp;
 private TextView forgotPassword;
 private ImageView facebook,google;
 private TextInputLayout emailLayout,passwordLayout;
-
+private TextInputEditText Email,Password;
 //backpress stop
     private static final int TIME_INTERVAL=2000;
     private long backPressed;
@@ -70,18 +78,66 @@ private TextInputLayout emailLayout,passwordLayout;
     }
 
     public void login(View view) {
-        Intent intent=new Intent(getApplicationContext(), com.example.foodspace.Home2Activity.class);
-        startActivity(intent);
-        finish();
-        overridePendingTransition(0,0);
+      logInRegisteredUser();
+    }
+
+    private void logInRegisteredUser() {
+    if(validateLoginDetails()){
+        showProgressDialog("Please Wait...");
+        String email= Objects.requireNonNull(Email.getText()).toString().trim();
+        String password= Objects.requireNonNull(Password.getText()).toString().trim();
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+               hideProgressDialog();
+                if(task.isSuccessful()){
+showErrorSnackBar("You are Logged in Successfully",false);
+Intent i=new Intent(MainActivity.this,Home2Activity.class);
+startActivity(i);
+overridePendingTransition(0,0);
+finish();
+                }
+                else{
+                    if(Objects.requireNonNull(task.getException()).getMessage()!=null){
+                        showErrorSnackBar(task.getException().getMessage().toString(),true);
+                    }
+
+                }
+            }
+        });
+
+    }
+    }
+
+    private boolean validateLoginDetails() {
+        if(TextUtils.isEmpty(Objects.requireNonNull(Email.getText()).toString().trim())){
+
+            showErrorSnackBar(getResources().getString(R.string.err_msg_enter_email), true);
+            return false;
+        }
+        else if(TextUtils.isEmpty(Objects.requireNonNull(Email.getText()).toString().trim())){
+
+
+            showErrorSnackBar(getResources().getString(R.string.err_msg_enter_password), true);
+            return false;
+        }
+        else{
+           return true;
+        }
     }
 
     public void Signup(View view) {
         Intent intent=new Intent(getApplicationContext(), com.example.foodspace.SignUp.class);
         startActivity(intent);
-        finish();
         overridePendingTransition(0,0);
 
+    }
+
+    public void forgetPassword(View view) {
+    Intent i=new Intent(this,Forgot_password.class);
+    startActivity(i);
+    finish();
+    overridePendingTransition(0,0);
     }
 }
 /**

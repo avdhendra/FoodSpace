@@ -54,81 +54,101 @@
                 android:textStyle="bold">
 
             </TextView>
-
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/NameInput"
-                style="@style/parent"
-                android:layout_margin="@dimen/loginViewsMargin"
-app:startIconDrawable="@drawable/ic_baseline_person_24"
-                app:startIconTint="@color/black"
+                android:id="@+id/textInputName"
+                style="@style/TextLable"
+                app:startIconDrawable="@drawable/ic_baseline_person_24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
                 app:endIconMode="clear_text"
+                app:endIconTint="#595656"
+                app:hintTextColor="@color/black"
+
+                android:textColorHint="#989898"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/NameEditText"
-                    style="@style/modifiedEditText"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/EmailInput"
-                style="@style/parent"
-                android:layout_margin="@dimen/loginViewsMargin"
-                app:startIconDrawable="@drawable/ic_baseline_email_24"
-                app:startIconTint="@color/black">
-
-                <EditText
-                    android:id="@+id/EmailEditText"
-                    style="@style/modifiedEditText"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/PasswordInput"
-                style="@style/parent"
-                android:layout_margin="@dimen/loginViewsMargin"
-
-                app:startIconDrawable="@drawable/ic_baseline_lock_24"
-                app:startIconTint="@color/black"
-                app:endIconMode="password_toggle">
-
-                <EditText
-                    android:id="@+id/PasswordEditText"
-                    style="@style/modifiedEditText"
+                    android:id="@+id/nameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
                     android:hint="Name"
-                    android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
+                    android:textColorHint="@color/black"
+                    android:padding="16dp"
+                    android:textColor="#222934"
+                    android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputemail"
+                style="@style/TextLable"
+                app:startIconDrawable="@drawable/ic_baseline_email_24"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="20dp" />
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:endIconMode="clear_text"
+                app:endIconTint="#595656"
+                app:hintTextColor="@color/black"
+
+                android:textColorHint="#989898"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/EmailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="Email"
+                    android:textColorHint="@color/black"
+                    android:padding="16dp"
+                    android:textColor="#222934"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputPassword"
+                style="@style/TextLable"
+                app:startIconDrawable="@drawable/ic_baseline_lock_24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:endIconMode="password_toggle"
+                app:endIconTint="#595656"
+                app:hintTextColor="@color/black"
+
+                android:textColorHint="#989898"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/PasswordEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="Password"
+                    android:textColorHint="@color/black"
+                    android:padding="16dp"
+                    android:textColor="#222934"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <Button
+    <TextView
         android:id="@+id/Signup"
-        android:layout_width="160dp"
-        android:layout_height="54dp"
-
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+android:textColor="@color/white"
+        android:gravity="center"
         android:background="@drawable/button_background_blue"
         android:text="Sign Up"
         android:textSize="20sp"

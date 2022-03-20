@@ -46,17 +46,13 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             />
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            >
+
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Full ($300)"
                 android:textSize="20sp"
-
+android:backgroundTint="@color/black"
                 android:textColor="@color/black"
 android:layout_marginTop="10dp"
                 />
@@ -64,11 +60,11 @@ android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Half ($300)"
-
+android:backgroundTint="@color/black"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/black"
                 />
-        </RadioGroup>
+
 
         <View
             android:layout_width="match_parent"
@@ -96,6 +92,7 @@ app:textSize="8sp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
 android:text="ADD"
+                    android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textAlignment="center"
                     android:gravity="center"
