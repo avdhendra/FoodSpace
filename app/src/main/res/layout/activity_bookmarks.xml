@@ -5,6 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Bookmarks">
+    tools:context=".ui.Activities.Profile.Bookmarks">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

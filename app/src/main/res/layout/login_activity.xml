@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
+    tools:context=".ui.Activities.LoginSignUp.MainActivity"
     android:background="@drawable/f1">
 
     <TextView
@@ -138,30 +138,31 @@ android:layout_marginTop="10dp"
     android:layout_marginTop="40dp"
     android:gravity="center"
     android:layout_height="wrap_content">
-    <TextView
+    <Button
         android:id="@+id/Login"
         android:layout_width="wrap_content"
 android:textColor="@color/white"
         android:gravity="center"
         android:layout_height="wrap_content"
-       android:paddingVertical="15dp"
+       android:paddingVertical="10dp"
         android:onClick="login"
-
+app:backgroundTint="#A61616"
              android:background="@drawable/button_background_blue"
         android:text="Login"
         android:textSize="20sp"
      />
 
-    <TextView
+    <Button
         android:id="@+id/Signup"
         android:textColor="@color/white"
         android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingVertical="15dp"
+        android:paddingVertical="10dp"
         android:layout_marginStart="10dp"
         android:onClick="Signup"
         android:text="Sign Up"
+        app:backgroundTint="#A61616"
         android:textSize="20sp"
         android:background="@drawable/button_background_blue"
      />

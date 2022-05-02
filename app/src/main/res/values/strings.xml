@@ -12,6 +12,7 @@
     <string name="Rs">\u20B9</string>
     <string name="err_msg_enter_first_name">PLease enter first name</string>
     <string name="err_msg_enter_email">Please Enter The Email.</string>
+    <string name="err_msg_enter_description">Please Enter The Description</string>
     <string name="err_msg_enter_password">Please enter password</string>
     <string name="err_msg_enter_confirm_password">PLease Enter Confirm Password</string>
     <string name="err_msg_enter_mobile_number">PLease Enter Mobile Number</string>

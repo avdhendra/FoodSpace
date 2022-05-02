@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#fff"
     android:fillViewport="true"
-    tools:context=".AboutYouActivity">
+    tools:context=".ui.Activities.Profile.AboutYouActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -29,8 +29,8 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar_settings_activity"
                 android:layout_width="match_parent"
-                app:navigationIcon="@drawable/ic_baseline_keyboard_backspace_24"
-                android:layout_height="?attr/actionBarSize"/>
+                android:layout_height="?attr/actionBarSize"
+                app:navigationIcon="@drawable/ic_baseline_keyboard_backspace_24" />
 
         </FrameLayout>
 
@@ -42,6 +42,11 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="-75dp">
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/user_image_background" />
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_user_photo"
                 android:layout_width="match_parent"
@@ -50,12 +55,109 @@
                 android:contentDescription="image"
 
                 android:src="@drawable/ic_user_placeholder" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/user_image_background" />
         </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_mobile_number"
+            android:layout_alignParentStart="true"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/add_review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/item_grey_border_background"
+                android:drawablePadding="5dp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:onClick="AddReview"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+
+                android:text="Add Review"
+                android:textColor="#393939"
+                android:textSize="14sp"
+                app:drawableStartCompat="@drawable/ic_baseline_edit_24" />
+
+            <TextView
+                android:id="@+id/add_restaurant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/item_grey_border_background"
+                android:drawablePadding="5dp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:onClick="AddRestaurant"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:text="Add Restaurant"
+                android:textColor="#393939"
+                android:textSize="14sp"
+                app:drawableStartCompat="@drawable/ic_baseline_edit_24" />
+
+            <TextView
+                android:id="@+id/add_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/item_grey_border_background"
+                android:drawablePadding="5dp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:onClick="AddItem"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:text="Add Item"
+                android:textColor="#393939"
+                android:textSize="14sp"
+                app:drawableStartCompat="@drawable/ic_baseline_edit_24" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fl_user_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="DenisPanjuta"
+            android:textColor="#000000"
+            android:textSize="22sp" />
+
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:text="denis.panjuta@gmail.com"
+            android:textColor="#393939"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_mobile_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_email"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:text="123456789"
+            android:textColor="#393939"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/tv_edit"
@@ -78,109 +180,6 @@
             android:textColor="#393939"
             android:textSize="14sp"
             app:drawableStartCompat="@drawable/ic_baseline_edit_24" />
-
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fl_user_image"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text="DenisPanjuta"
-            android:textColor="#000000"
-            android:textSize="22sp" />
-
-
-
-        <TextView
-            android:id="@+id/tv_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_name"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="3dp"
-            android:textColor="#393939"
-            android:textSize="18sp"
-            android:text="denis.panjuta@gmail.com"/>
-
-        <TextView
-            android:id="@+id/tv_mobile_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_email"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="3dp"
-            android:text="123456789"
-            android:textColor="#393939"
-            android:textSize="18sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_mobile_number"
-            android:layout_alignParentStart="true"
-            android:orientation="horizontal"
-            android:weightSum="3">
-
-            <TextView
-                android:id="@+id/add_review"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-android:layout_margin="5dp"
-                android:layout_weight="1"
-android:onClick="AddReview"
-                android:background="@drawable/item_grey_border_background"
-                android:drawablePadding="5dp"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:paddingStart="10dp"
-                android:paddingTop="5dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="5dp"
-
-                android:text="Add Review"
-                android:textColor="#393939"
-                android:textSize="14sp"
-                app:drawableStartCompat="@drawable/ic_baseline_edit_24" />
-
-            <TextView
-                android:layout_margin="5dp"
-                android:id="@+id/add_restaurant"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/item_grey_border_background"
-                android:drawablePadding="5dp"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:paddingStart="10dp"
-                android:paddingTop="5dp"
-                android:onClick="AddRestaurant"
-                android:paddingEnd="10dp"
-                android:paddingBottom="5dp"
-                android:text="Add Restaurant"
-                android:textColor="#393939"
-                android:textSize="14sp"
-                app:drawableStartCompat="@drawable/ic_baseline_edit_24" />
-
-            <TextView
-                android:id="@+id/add_menu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-android:layout_margin="5dp"
-                android:onClick="AddItem"
-                android:layout_weight="1"
-                android:background="@drawable/item_grey_border_background"
-                android:drawablePadding="5dp"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:paddingStart="10dp"
-                android:paddingTop="5dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="5dp"
-                android:text="Add Item"
-                android:textColor="#393939"
-                android:textSize="14sp"
-                app:drawableStartCompat="@drawable/ic_baseline_edit_24" />
-
-        </LinearLayout>
 
 
     </RelativeLayout>

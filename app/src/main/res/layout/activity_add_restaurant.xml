@@ -5,24 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-    tools:context=".Add_Restaurant">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_add_Restaurant"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/ic_baseline_keyboard_backspace_24">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Restaurant"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-    </androidx.appcompat.widget.Toolbar>
+    tools:context=".ui.Activities.Profile.Add_Restaurant">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -65,123 +48,6 @@
                     android:src="@drawable/ic_vector_add_photo" />
             </FrameLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_product_title"
-                style="@style/TextLable"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                app:endIconMode="clear_text"
-                app:endIconTint="#595656"
-                app:hintTextColor="@color/black"
-
-                android:textColorHint="#989898"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fl_product_image">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_product_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:hint="Restaurant Name"
-                    android:textColorHint="@color/black"
-                    android:padding="16dp"
-                    android:textColor="#222934"
-                    android:textSize="16sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_product_price"
-                style="@style/TextLable"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-
-                app:endIconMode="clear_text"
-                app:endIconTint="#595656"
-                app:hintTextColor="@color/black"
-                android:textColorHint="#989898"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/til_product_title">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_product_price"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:hint="Rate"
-                    android:padding="16dp"
-                    android:textColorHint="@color/black"
-                    android:textColor="#222934"
-                    android:textSize="16sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_product_description"
-                style="@style/TextLable"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-
-                app:endIconMode="clear_text"
-                app:endIconTint="#595656"
-                app:hintTextColor="@color/black"
-                android:textColorHint="#989898"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/til_product_price">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_product_description"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textMultiLine"
-                    android:hint="Food Type"
-                    android:padding="16dp"
-                    android:textColorHint="@color/black"
-                    android:textColor="#222934"
-                    android:textSize="16sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_product_quantity"
-                style="@style/TextLable"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                app:endIconMode="clear_text"
-                app:endIconTint="#595656"
-                app:hintTextColor="@color/black"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-
-                android:textColorHint="#989898"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/til_product_description">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_product_quantity"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Veg or Non Veg"
-                    android:inputType="number"
-                    android:padding="16dp"
-                    android:textColorHint="@color/black"
-                    android:textColor="#222934"
-                    android:textSize="16sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
             <TextView
                 android:id="@+id/btn_submit"
                 android:layout_width="match_parent"
@@ -202,8 +68,142 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/til_product_quantity" />
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_product_price"
+                style="@style/TextLable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+
+                android:textColorHint="#989898"
+                app:endIconMode="clear_text"
+                app:endIconTint="#595656"
+                app:hintTextColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_product_title">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_product_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Rate"
+                    android:inputType="text"
+                    android:padding="16dp"
+                    android:textColor="#222934"
+                    android:textColorHint="@color/black"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_product_description"
+                style="@style/TextLable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+
+                android:textColorHint="#989898"
+                app:endIconMode="clear_text"
+                app:endIconTint="#595656"
+                app:hintTextColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_product_price">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_product_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Food Type"
+                    android:inputType="textMultiLine"
+                    android:padding="16dp"
+                    android:textColor="#222934"
+                    android:textColorHint="@color/black"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_product_quantity"
+                style="@style/TextLable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:textColorHint="#989898"
+                app:endIconMode="clear_text"
+                app:endIconTint="#595656"
+
+                app:hintTextColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_product_description">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_product_quantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Veg or Non Veg"
+                    android:inputType="number"
+                    android:padding="16dp"
+                    android:textColor="#222934"
+                    android:textColorHint="@color/black"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_product_title"
+                style="@style/TextLable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:textColorHint="#989898"
+                app:endIconMode="clear_text"
+                app:endIconTint="#595656"
+
+                app:hintTextColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fl_product_image">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_product_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Restaurant Name"
+                    android:inputType="text"
+                    android:padding="16dp"
+                    android:textColor="#222934"
+                    android:textColorHint="@color/black"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_add_Restaurant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_baseline_keyboard_backspace_24">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Restaurant"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+    </androidx.appcompat.widget.Toolbar>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

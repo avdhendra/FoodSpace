@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "990547169963",
-    "project_id": "foodspace1",
-    "storage_bucket": "foodspace1.appspot.com"
+    "project_number": "722763680423",
+    "project_id": "foodspace-a2148",
+    "storage_bucket": "foodspace-a2148.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:990547169963:android:7d23c497b9989b22bf9dee",
+        "mobilesdk_app_id": "1:722763680423:android:a9ee79eed11be83c0ee982",
         "android_client_info": {
           "package_name": "com.example.foodspace"
         }
       },
       "oauth_client": [
         {
-          "client_id": "990547169963-ga7v9gt7g3uvhc1soeavm8nvbu78652d.apps.googleusercontent.com",
+          "client_id": "722763680423-l40ecr91ftplddg7orn1qmpjgqa03icc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDy7rGq-CZc7EgBIIRPXuKHGsrk5TYQK2k"
+          "current_key": "AIzaSyBKNFALTg0xvKKY6MqTTCNLHx5NUZopsBY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "990547169963-ga7v9gt7g3uvhc1soeavm8nvbu78652d.apps.googleusercontent.com",
+              "client_id": "722763680423-l40ecr91ftplddg7orn1qmpjgqa03icc.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

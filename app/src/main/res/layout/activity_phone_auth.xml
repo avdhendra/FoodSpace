@@ -7,7 +7,7 @@
     android:paddingStart="8dp"
     android:paddingEnd="8dp"
     android:background="@drawable/f1"
-    tools:context=".PhoneAuth">
+    tools:context=".ui.Activities.LoginSignUp.PhoneAuth">
 
     <TextView
         android:id="@+id/textView"

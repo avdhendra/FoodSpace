@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#fff"
     android:orientation="vertical"
-    tools:context=".Common_Search">
+    tools:context=".ui.Activities.Search.Common_Search">
     <LinearLayout
         android:layout_width="match_parent"
         android:id="@+id/consts"

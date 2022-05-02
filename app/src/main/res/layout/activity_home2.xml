@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 android:layout_alignParentBottom="true"
     android:background="#fff"
-    tools:context=".Home2Activity">
+    tools:context=".ui.Activities.Home.Home2Activity">
 
         <TextView
             android:id="@+id/textView2"
@@ -26,21 +26,25 @@ android:layout_alignParentBottom="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="100dp"
+    app:layout_constraintBottom_toTopOf="@+id/consts"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/textView2"
+    app:layout_constraintTop_toTopOf="parent">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/userProfile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circleImageView"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="115dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="20dp"
-            android:onClick="profile"
-            android:src="@drawable/i2"
-            app:layout_constraintBottom_toTopOf="@+id/consts"
-            app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="profile"
+        android:src="@drawable/defaultavatar"
+        />
 
-            app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toTopOf="parent" />
+</LinearLayout>
+
 
 
 
@@ -201,9 +205,27 @@ android:layout_alignParentBottom="true"
                                     android:layout_width="match_parent"
                                     android:layout_height="200dp"
                                     android:layout_weight="4"
+                                    android:visibility="gone"
                                     android:nestedScrollingEnabled="false"
                                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                                     app:spanCount="4" />
+
+                                <com.facebook.shimmer.ShimmerFrameLayout
+                                    android:id="@+id/shimmer_layout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+
+                                        android:orientation="horizontal">
+                                        <include layout="@layout/shimmer_home2child"/>
+                                        <include layout="@layout/shimmer_home2child"/>
+                                        <include layout="@layout/shimmer_home2child"/>
+                                        <include layout="@layout/shimmer_home2child"/>
+                                    </LinearLayout>
+
+                                </com.facebook.shimmer.ShimmerFrameLayout>
                                 <TextView
                                     android:id="@+id/seemore"
                                     android:layout_width="match_parent"

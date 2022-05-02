@@ -6,7 +6,7 @@
     android:background="#fff"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReviewSearch">
+    tools:context=".ui.Activities.Search.ReviewSearch">
 
     <LinearLayout
         android:id="@+id/consts"

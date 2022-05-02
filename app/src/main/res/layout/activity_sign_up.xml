@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/f1"
-    tools:context=".SignUp">
+    tools:context=".ui.Activities.LoginSignUp.SignUp">
 
-    <TextView
+    <Button
         android:id="@+id/Signup"
         android:layout_width="300dp"
         android:layout_height="54dp"
@@ -16,6 +16,7 @@
 android:layout_marginBottom="40dp"
         android:onClick="signup"
         android:text="Sign Up"
+        app:backgroundTint="#A61616"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -127,7 +128,7 @@ android:textColor="#2C2C2C"
                     android:id="@+id/nameEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
+                    android:inputType="textCapSentences"
                     android:hint="Name"
                     android:textColorHint="@color/black"
                     android:padding="16dp"

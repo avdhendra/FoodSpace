@@ -2,62 +2,72 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.foodspace">
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"
+        tools:ignore="ScopedStorage"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
     <application
-        android:allowBackup="true"
+
+
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FoodSpace"
-        tools:replace="android:theme">
+        android:theme="@style/AppTheme"
+        tools:targetApi="m"
+       >
         <activity
-            android:name=".Forgot_password"
+            android:name=".ui.Activities.LoginSignUp.Forgot_password"
             android:exported="false" />
         <activity
-            android:name=".Search_Restaurant"
+            android:name=".ui.Activities.Search.Search_Restaurant"
             android:exported="false" />
         <activity
-            android:name=".ReviewSearch"
+            android:name=".ui.Activities.Search.ReviewSearch"
             android:exported="false" />
         <activity
-            android:name=".Common_Search"
+            android:name=".ui.Activities.Search.Common_Search"
             android:exported="false" />
         <activity
-            android:name=".Add_Item"
+            android:name=".ui.Activities.Profile.Add_Item"
             android:exported="false" />
         <activity
-            android:name=".Add_Restaurant"
+            android:name=".ui.Activities.Profile.Add_Restaurant"
             android:exported="false" />
         <activity
-            android:name=".AddReview"
+            android:name=".ui.Activities.Profile.AddReview"
             android:exported="false" />
         <activity
-            android:name=".Edit_Profile"
+            android:name=".ui.Activities.Profile.Edit_Profile"
             android:exported="false" />
         <activity
-            android:name=".AboutYouActivity"
+            android:name=".ui.Activities.Profile.AboutYouActivity"
             android:exported="false" />
         <activity
-            android:name=".RestaurantMenu"
+            android:name=".ui.Activities.Menu.RestaurantMenu"
             android:exported="false" />
         <activity
-            android:name=".Bookmarks"
+            android:name=".ui.Activities.Profile.Bookmarks"
             android:exported="false" />
         <activity
-            android:name=".NameOfUser"
+            android:name=".ui.Activities.LoginSignUp.NameOfUser"
             android:exported="false" />
         <activity
-            android:name=".OtpNumber"
+            android:name=".ui.Activities.LoginSignUp.OtpNumber"
             android:exported="false" />
         <activity
-            android:name=".PhoneAuth"
+            android:name=".ui.Activities.LoginSignUp.PhoneAuth"
             android:exported="false" />
         <activity
-            android:name=".expandedLayoutitemactivity"
+            android:name=".ui.Activities.expandedLayoutitemactivity"
             android:exported="false" />
         <activity
-            android:name=".Dinning"
+            android:name=".ui.Activities.Home.Dinning"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="false"
             android:screenOrientation="portrait"
@@ -71,16 +81,16 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <activity
-            android:name=".MapsActivity"
+            android:name=".ui.Activities.Home.MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_maps"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".profile"
+            android:name=".ui.Activities.Profile.profile"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".IntroActivity"
+            android:name=".ui.Activities.LoginSignUp.IntroActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -90,17 +100,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Home2Activity"
+            android:name=".ui.Activities.Home.Home2Activity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".SignUp"
+            android:name=".ui.Activities.LoginSignUp.SignUp"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.Activities.LoginSignUp.MainActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
 
@@ -114,12 +124,7 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
 
     <uses-permission android:name="android.permission.INTERNET" />
 
