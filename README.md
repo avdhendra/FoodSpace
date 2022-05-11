@@ -24,9 +24,9 @@ This app was designed as a proof of concept for the [CodeRAD library](https://gi
 
 ## Screenshots
 
-  Welcome                  |  Sign in                  | Sign up                   |  Location
+  Welcome                  |  Sign in                  | Sign up                   |  Phone Auth
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/getstarted.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/login.jpg)|![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-3-Onboarding.png?raw=true)|![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-4-Location.png?raw=true)|
+![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/getstarted.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/login.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/phone_auth.jpg)|![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-4-Location.png?raw=true)|
 
 Home               |  Restaurants List               | Restaurant Page             |  Order
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
