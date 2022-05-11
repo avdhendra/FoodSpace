@@ -28,19 +28,19 @@ This app was designed as a proof of concept for the [CodeRAD library](https://gi
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/getstarted.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/login.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/signup.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/phone_auth.jpg)|
 
-Home                       |  Restaurants List         | Add Restaurant           |  Add Item
+Home                       |  Restaurants List         | Add Restaurant           |  Menu List
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/delivery_screen.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/restuarent_list.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/restuarent_add.jpg)|![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-11-Product.png?raw=true)|
+![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/delivery_screen.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/restuarent_list.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/restuarent_add.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/menu_list.jpg)|
 
 
-Profile                    |   Search Location         |  Add Card              | Order Placed   
+Profile                    |   Search Location         |  Dining              | Menu List   
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/profile.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/search_location.jpg)|![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-5-Add-Card.png?raw=true)|![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-15-Order-Success.png?raw=true)|
+![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/profile.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/search_location.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/dining_screen.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/menu_list.jpg)|
 
 
-|  Order Processing       |   Order Cancelled          |  Profile           
+|  Reviewing      |   Dashboard          |  Add Menu Item          
 :-------------------------:|:-------------------------:|:-------------------------:
-![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-13-Order-Progress.png?raw=true)|![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-14-Order-Cancel.png?raw=true)|![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-6-Profile.png?raw=true)|
+![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/review.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/dashboard.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/menu_item_add.jpg)|
 
 
 
