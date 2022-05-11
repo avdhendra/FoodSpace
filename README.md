@@ -26,16 +26,16 @@ This app was designed as a proof of concept for the [CodeRAD library](https://gi
 
   Welcome                  |  Sign in                  | Sign up                   |  Phone Auth
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/getstarted.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/login.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/phone_auth.jpg)|![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-4-Location.png?raw=true)|
+![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/getstarted.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/login.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/phone_auth.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/phone_auth.jpg)|
 
-Home               |  Restaurants List               | Restaurant Page             |  Order
+Home                       |  Restaurants List         | Add Restaurant           |  Add Item
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-8-Home.png?raw=true)|![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-9-Restaurants.png?raw=true)|![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-10-Restaurant.png?raw=true)|![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-11-Product.png?raw=true)|
+![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/delivery_screen.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/restuarent_list.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/restuarent_add.jpg)|![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-11-Product.png?raw=true)|
 
 
-Filter              |   Favorites               |  Add Card               | Order Placed      
+Profile                    |   Search Location         |  Add Card              | Order Placed   
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-12-Filter.png?raw=true)|![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-7-Favorite.png?raw=true)|![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-5-Add-Card.png?raw=true)|![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-15-Order-Success.png?raw=true)|
+![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/profile.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/search_location.jpg)|![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-5-Add-Card.png?raw=true)|![](https://www.codenameone.com/wp-content/uploads/2021/08/GrubHub-15-Order-Success.png?raw=true)|
 
 
 |  Order Processing       |   Order Cancelled          |  Profile           
