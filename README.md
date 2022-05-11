@@ -26,7 +26,7 @@ This app was designed as a proof of concept for the [CodeRAD library](https://gi
 
   Welcome                  |  Sign in                  | Sign up                   |  Phone Auth
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/getstarted.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/login.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/phone_auth.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/phone_auth.jpg)|
+![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/getstarted.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/login.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/signup.jpg)|![](https://github.com/avdhendra/FoodSpace/blob/master/app/src/main/res/raw/phone_auth.jpg)|
 
 Home                       |  Restaurants List         | Add Restaurant           |  Add Item
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
