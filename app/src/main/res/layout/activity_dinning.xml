@@ -47,9 +47,11 @@
                             android:id="@+id/linearLayout"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
+                            android:layout_marginTop="15dp"
                             android:background="@drawable/dinquo"
                             android:orientation="horizontal"
-                            app:layout_constraintBottom_toTopOf="@+id/textView8"
+
+
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -62,15 +64,16 @@
                             android:id="@+id/textView8"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="160dp"
+                            android:layout_marginTop="10dp"
                             android:text="Place Categories"
                             android:textColor="#162553"
                             android:textSize="15sp"
                             android:textStyle="bold"
+
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
                         <TextView
                             android:id="@+id/textView9"
@@ -105,7 +108,6 @@
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/nestedscrollView">
-
                                 <androidx.recyclerview.widget.RecyclerView
                                     android:id="@+id/placeRecyclerview"
                                     android:layout_width="match_parent"
@@ -124,12 +126,17 @@
                                     android:fontFamily="@font/allerta"
                                     android:gravity="center"
                                     android:minHeight="0dp"
+
                                     android:paddingStart="100dp"
                                     android:paddingEnd="100dp"
                                     android:text="see more"
                                     android:textAllCaps="false"
                                     android:textColor="#494646"
                                     android:textSize="12sp" />
+
+
+
+
                             </LinearLayout>
                         </androidx.core.widget.NestedScrollView>
 
@@ -227,7 +234,7 @@
         android:id="@+id/consts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="8dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -260,19 +267,22 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="20dp"
-        android:onClick="profile"
-        android:src="@drawable/i2"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
         app:layout_constraintBottom_toTopOf="@+id/consts"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:onClick="profile"
+            android:src="@drawable/defaultavatar" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

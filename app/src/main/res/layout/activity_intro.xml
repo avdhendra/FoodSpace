@@ -7,38 +7,53 @@
     android:background="@drawable/i2"
     android:paddingHorizontal="20dp"
     tools:context=".ui.Activities.LoginSignUp.IntroActivity">
+
     <TextView
+        android:id="@+id/getStartedLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
         android:fontFamily="@font/artifika"
         android:text="Eat Healthy Delight in Every Bite .."
         android:textColor="@color/colorPrimary"
-android:id="@+id/getStartedLine"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/Signup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/Signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/started"
-android:onClick="getStarted"
-app:backgroundTint="#CC0A31"
-        android:textAlignment="center"
-        android:padding="15dp"
         android:fontFamily="@font/artifika"
-        android:text="Get Started"
+        android:onClick="SignIn"
+        android:padding="15dp"
+        android:text="SIGN IN"
+        android:layout_marginBottom="20dp"
+        android:textAlignment="center"
         android:textColor="@color/white"
+        app:backgroundTint="#CC0A31"
+        app:layout_constraintBottom_toTopOf="@+id/SIGNIN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/SIGNIN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/transparent_button"
+        android:fontFamily="@font/artifika"
+        android:onClick="Signup"
+        android:layout_marginBottom="20dp"
+        android:padding="15dp"
+        android:text="SIGN UP"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.903" />
-
+        app:layout_constraintStart_toStartOf="parent" />
+       " />
 </androidx.constraintlayout.widget.ConstraintLayout>

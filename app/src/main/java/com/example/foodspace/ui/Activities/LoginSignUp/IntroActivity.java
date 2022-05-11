@@ -69,4 +69,17 @@ public class IntroActivity extends AppCompatActivity {
         super.onDestroy();
         mAuth.signOut();
     }
+
+    public void Signup(View view) {
+        Intent intent = new Intent(IntroActivity.this, SignUp.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void SignIn(View view) {
+
+        Intent intent = new Intent(IntroActivity.this, PhoneAuth.class);
+        startActivity(intent);
+        finish();
+    }
 }

@@ -6,10 +6,12 @@ import androidx.appcompat.content.res.AppCompatResources;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
@@ -22,6 +24,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.example.foodspace.Constants;
 import com.example.foodspace.Model.PopularPlaces;
 import com.example.foodspace.Model.PopularRestaurant;
 import com.example.foodspace.R;
@@ -41,7 +45,8 @@ public class Dinning extends AppCompatActivity {
     TextView seemore;
     private List<PopularPlaces> placesItem;
     private List<PopularRestaurant> Restuarantplace;
-
+    Constants constants;
+    CircleImageView userProfile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,8 +56,12 @@ public class Dinning extends AppCompatActivity {
                 expanded = savedInstanceState.getBoolean("expanded");
             }
         }
+        userProfile=findViewById(R.id.circleImageView);
+        constants = new Constants();
         recyclerViewCategory1();
         recyclerRestaurant1();
+        profileImageShow();
+
         bottomNavigationView = findViewById(R.id.BottomnavigationView);
         bottomNavigationView.setSelectedItemId(R.id.nav_Dining);
         bottomNavigationView.setBackground(null);
@@ -60,6 +69,12 @@ public class Dinning extends AppCompatActivity {
         bottomNavigationView.getMenu().getItem(2).setEnabled(false);
         bottomNavigationView.setItemRippleColor(null);
         bottomNavigationView.setOnNavigationItemSelectedListener(navlistener);
+    }
+
+    private void profileImageShow() {
+        SharedPreferences sharedPreferences = getSharedPreferences(constants.FoodSpace_Preference, Context.MODE_PRIVATE);
+        String ImagePref = sharedPreferences.getString(constants.USER_PROFILE_IMAGE, "");
+        Glide.with(Dinning.this).load(ImagePref).placeholder(R.drawable.defaultavatar).into(userProfile);
     }
 
     private void recyclerViewCategory1() {
